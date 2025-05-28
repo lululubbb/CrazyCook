@@ -66,7 +66,7 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Shift"",
                     ""type"": ""Button"",
-                    ""id"": ""14c58a3f-80b4-4af2-90d3-48cf9e4f5d2d"",
+                    ""id"": ""066627ce-da9d-4d84-9670-7259288746aa"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -219,7 +219,7 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""61d536f9-6cf0-4341-b12b-fb6bff357755"",
+                    ""id"": ""7d0987ae-99fa-47f9-a6d5-f721b21ebe8c"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
