@@ -109,6 +109,7 @@ Material:
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,15 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: ICE SDF
   m_EditorClassIdentifier: 
-  hashCode: 1548581086
-  material: {fileID: -1824977311398830968}
-  materialHashCode: -1796181954
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 41452a460b7aeba4b84518a26112816c
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 41452a460b7aeba4b84518a26112816c,
-    type: 3}
-  m_SourceFontFile: {fileID: 0}
-  m_AtlasPopulationMode: 0
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: zihunbingqilin
@@ -152,6 +145,36 @@ MonoBehaviour:
     m_StrikethroughOffset: 8
     m_StrikethroughThickness: 2.2
     m_TabWidth: 13
+  m_Material: {fileID: -1824977311398830968}
+  m_SourceFontFileGUID: 41452a460b7aeba4b84518a26112816c
+  m_CreationSettings:
+    sourceFontFileName: 
+    sourceFontFileGUID: 41452a460b7aeba4b84518a26112816c
+    faceIndex: 0
+    pointSizeSamplingMode: 0
+    pointSize: 44
+    padding: 2
+    paddingMode: 0
+    packingMode: 0
+    atlasWidth: 512
+    atlasHeight: 512
+    characterSetSelectionMode: 8
+    characterSequence: "\r\n\u897F\u7EA2\u67FF \u9762\u5305 \u852C\u83DC \u829D\u58EB
+      \u8089\u997C \u76D8\u5B50 \u5377\u5FC3\u83DC\r\n\u7B49\u5F85\u4E0A\u83DC\u4E2D... 
+      \u52A0\u8F7D\u4E2D\r\n\u83DC\u8C31\u7B49\u5F85\u4E2D...\r\n\u829D\u58EB\u6C49\u5821\u5305\r\n\u6C99\u62C9\r\n\u5DE8\u65E0\u9738\u6C49\u5821\u5305\r\n\u6E38\u620F\u5931\u8D25\r\n\u6E38\u620F\u80DC\u5229\r\n\u6E38\u620F\u7ED3\u675F\r\n\u6210\u529F\u5236\u4F5C\u83DC\u6570\r\n\u5F00\u59CB
+      \u9000\u51FA \u6682\u505C\r\n\u8BBE\u7F6E\r\n\u97F3\u6548\u5927\u5C0F \u97F3\u4E50\u5927\u5C0F
+      \u5173\u95ED \u6309\u4E0B\u4E00\u4E2A\u65B0\u7684\u6309\u952E\r\n\u5411\u4E0A\u79FB\u52A8\r\n\u5411\u4E0B\u79FB\u52A8\r\n\u5411\u5DE6\u79FB\u52A8\r\n\u5411\u53F3\u79FB\u52A8\r\n\u4F20\u9012\u83DC\r\n\u70F9\u996A\u83DC\r\n\u6F02\u4EAE 
+      \u9519\u8BEF \u7EE7\u7EED\r\n\u8BA2\u5355\u5217\u8868\uFF1A\u64CD\u4F5C \u4EA4\u4E92\r\n1234567890\r\nqwertyuiopasdfghjklzxcvbnm_\r\nQWERTYUIOPASDFGHJKLZXCVBNM"
+    referencedFontAssetGUID: 
+    referencedTextAssetGUID: 369bd8616ed83e34993bd32460e8a744
+    fontStyle: 0
+    fontStyleModifier: 0
+    renderMode: 4165
+    includeFontFeatures: 0
+  m_SourceFontFile: {fileID: 0}
+  m_SourceFontFilePath: 
+  m_AtlasPopulationMode: 0
+  InternalDynamicOS: 0
   m_GlyphTable:
   - m_Index: 1
     m_Metrics:
@@ -3046,7 +3069,12 @@ MonoBehaviour:
   - {fileID: 9077581944250671864}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
+  m_GetFontFeatures: 1
   m_ClearDynamicDataOnBuild: 0
+  m_AtlasWidth: 512
+  m_AtlasHeight: 512
+  m_AtlasPadding: 2
+  m_AtlasRenderMode: 4165
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
@@ -3941,62 +3969,14 @@ MonoBehaviour:
     m_Y: 425
     m_Width: 44
     m_Height: 86
-  m_fontInfo:
-    Name: 
-    PointSize: 0
-    Scale: 0
-    CharacterCount: 0
-    LineHeight: 0
-    Baseline: 0
-    Ascender: 0
-    CapHeight: 0
-    Descender: 0
-    CenterLine: 0
-    SuperscriptOffset: 0
-    SubscriptOffset: 0
-    SubSize: 0
-    Underline: 0
-    UnderlineThickness: 0
-    strikethrough: 0
-    strikethroughThickness: 0
-    TabWidth: 0
-    Padding: 0
-    AtlasWidth: 0
-    AtlasHeight: 0
-  atlas: {fileID: 0}
-  m_AtlasWidth: 512
-  m_AtlasHeight: 512
-  m_AtlasPadding: 2
-  m_AtlasRenderMode: 4165
-  m_glyphInfoList: []
-  m_KerningTable:
-    kerningPairs: []
   m_FontFeatureTable:
+    m_MultipleSubstitutionRecords: []
+    m_LigatureSubstitutionRecords: []
     m_GlyphPairAdjustmentRecords: []
-  fallbackFontAssets: []
+    m_MarkToBaseAdjustmentRecords: []
+    m_MarkToMarkAdjustmentRecords: []
+  m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable: []
-  m_CreationSettings:
-    sourceFontFileName: 
-    sourceFontFileGUID: 41452a460b7aeba4b84518a26112816c
-    pointSizeSamplingMode: 0
-    pointSize: 44
-    padding: 2
-    packingMode: 0
-    atlasWidth: 512
-    atlasHeight: 512
-    characterSetSelectionMode: 8
-    characterSequence: "\r\n\u897F\u7EA2\u67FF \u9762\u5305 \u852C\u83DC \u829D\u58EB
-      \u8089\u997C \u76D8\u5B50 \u5377\u5FC3\u83DC\r\n\u7B49\u5F85\u4E0A\u83DC\u4E2D... 
-      \u52A0\u8F7D\u4E2D\r\n\u83DC\u8C31\u7B49\u5F85\u4E2D...\r\n\u829D\u58EB\u6C49\u5821\u5305\r\n\u6C99\u62C9\r\n\u5DE8\u65E0\u9738\u6C49\u5821\u5305\r\n\u6E38\u620F\u5931\u8D25\r\n\u6E38\u620F\u80DC\u5229\r\n\u6E38\u620F\u7ED3\u675F\r\n\u6210\u529F\u5236\u4F5C\u83DC\u6570\r\n\u5F00\u59CB
-      \u9000\u51FA \u6682\u505C\r\n\u8BBE\u7F6E\r\n\u97F3\u6548\u5927\u5C0F \u97F3\u4E50\u5927\u5C0F
-      \u5173\u95ED \u6309\u4E0B\u4E00\u4E2A\u65B0\u7684\u6309\u952E\r\n\u5411\u4E0A\u79FB\u52A8\r\n\u5411\u4E0B\u79FB\u52A8\r\n\u5411\u5DE6\u79FB\u52A8\r\n\u5411\u53F3\u79FB\u52A8\r\n\u4F20\u9012\u83DC\r\n\u70F9\u996A\u83DC\r\n\u6F02\u4EAE 
-      \u9519\u8BEF \u7EE7\u7EED\r\n\u8BA2\u5355\u5217\u8868\uFF1A\u64CD\u4F5C \u4EA4\u4E92\r\n1234567890\r\nqwertyuiopasdfghjklzxcvbnm_\r\nQWERTYUIOPASDFGHJKLZXCVBNM"
-    referencedFontAssetGUID: 
-    referencedTextAssetGUID: 369bd8616ed83e34993bd32460e8a744
-    fontStyle: 0
-    fontStyleModifier: 0
-    renderMode: 4165
-    includeFontFeatures: 0
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
@@ -4025,6 +4005,33 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
+  m_fontInfo:
+    Name: 
+    PointSize: 0
+    Scale: 0
+    CharacterCount: 0
+    LineHeight: 0
+    Baseline: 0
+    Ascender: 0
+    CapHeight: 0
+    Descender: 0
+    CenterLine: 0
+    SuperscriptOffset: 0
+    SubscriptOffset: 0
+    SubSize: 0
+    Underline: 0
+    UnderlineThickness: 0
+    strikethrough: 0
+    strikethroughThickness: 0
+    TabWidth: 0
+    Padding: 0
+    AtlasWidth: 0
+    AtlasHeight: 0
+  m_glyphInfoList: []
+  m_KerningTable:
+    kerningPairs: []
+  fallbackFontAssets: []
+  atlas: {fileID: 0}
 --- !u!28 &9077581944250671864
 Texture2D:
   m_ObjectHideFlags: 0
@@ -4035,10 +4042,8 @@ Texture2D:
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
+  serializedVersion: 3
   m_Width: 512
   m_Height: 512
   m_CompleteImageSize: 262144
