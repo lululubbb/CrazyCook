@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/1-LoadScene.unity
     guid: 33cf8d431a8914c4f9338846a9e7b573
   - enabled: 1
-    path: Assets/Prefabs/2-GameScene.unity
+    path: Assets/Scenes/2-GameScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
