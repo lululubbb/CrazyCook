@@ -10,6 +10,8 @@ public class Player : KitchenObjectHolder
     [SerializeField] private float rotateSpeed = 10;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask counterLayerMask;
+    [SerializeField] private List<GameObject> players = new List<GameObject>();
+    private int currentIndex = 0;
 
     private bool isWalking = false;
     private BaseCounter selectedCounter;
@@ -22,6 +24,8 @@ public class Player : KitchenObjectHolder
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
         gameInput.OnOperateAction += GameInput_OnOperateAction;
+        GameInput.Instance.OnShiftAction += OnShiftPerformed;
+        UpdatePlayerControl();
     }
 
 
@@ -44,12 +48,27 @@ public class Player : KitchenObjectHolder
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
+        if (!this.enabled) return;
         selectedCounter?.Interact(this);
     }
 
     private void GameInput_OnOperateAction(object sender, System.EventArgs e)
     {
+        if (!this.enabled) return;
         selectedCounter?.InteractOperate(this);
+    }
+    private void OnShiftPerformed(object sender, System.EventArgs e)
+    {
+        currentIndex = (currentIndex + 1) % players.Count;
+        UpdatePlayerControl();
+    }
+
+    private void UpdatePlayerControl()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].GetComponent<Player>().enabled = (i == currentIndex);
+        }
     }
 
     private void HandleMovement()

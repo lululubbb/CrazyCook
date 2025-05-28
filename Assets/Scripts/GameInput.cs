@@ -13,6 +13,7 @@ public class GameInput : MonoBehaviour
     public event EventHandler OnInteractAction;
     public event EventHandler OnOperateAction;
     public event EventHandler OnPauseAction;
+    public event EventHandler OnShiftAction;
 
     private GameControl gameControl;
 
@@ -24,7 +25,8 @@ public class GameInput : MonoBehaviour
         Right,
         Interact,
         Operate,
-        Pause
+        Pause,
+        Shift
     }
 
     private void Awake()
@@ -40,13 +42,14 @@ public class GameInput : MonoBehaviour
         gameControl.Player.Interact.performed += Interact_Performed;
         gameControl.Player.Operate.performed += Operate_Performed;
         gameControl.Player.Pause.performed += Pause_Performed;
+        gameControl.Player.Shift.performed += Shift_Performed;
     }
 
     //private void Update()
     //{
     //    if (Input.GetMouseButtonDown(0))
     //    {
-    //        print("¿ªÊ¼°ó¶¨");
+    //        print("ï¿½ï¿½Ê¼ï¿½ï¿½");
     //        gameControl.Player.Disable();
     //        gameControl.Player.Move.PerformInteractiveRebinding(1).OnComplete(callback =>
     //        {
@@ -54,7 +57,7 @@ public class GameInput : MonoBehaviour
     //            print(callback.action.bindings[1].overridePath);
 
     //            callback.Dispose();
-    //            print("°ó¶¨Íê³É");
+    //            print("ï¿½ï¿½ï¿½ï¿½ï¿½");
     //            gameControl.Player.Enable();
     //        }).Start();
     //    }
@@ -95,6 +98,10 @@ public class GameInput : MonoBehaviour
                 index = 0;
                 inputAction = gameControl.Player.Pause;
                 break;
+            case BindingType.Shift:
+                index = 0;
+                inputAction = gameControl.Player.Pause;
+                break;
             default:
                 break;
         }
@@ -129,6 +136,8 @@ public class GameInput : MonoBehaviour
                 return gameControl.Player.Operate.bindings[0].ToDisplayString();
             case BindingType.Pause:
                 return gameControl.Player.Pause.bindings[0].ToDisplayString();
+            case BindingType.Shift:
+                return gameControl.Player.Pause.bindings[0].ToDisplayString();
             default:
                 break;
         }
@@ -150,6 +159,7 @@ public class GameInput : MonoBehaviour
         gameControl.Player.Interact.performed -= Interact_Performed;
         gameControl.Player.Operate.performed -= Operate_Performed;
         gameControl.Player.Pause.performed -= Pause_Performed;
+        gameControl.Player.Shift.performed -= Shift_Performed;
 
         gameControl.Dispose();
     }
@@ -168,11 +178,15 @@ public class GameInput : MonoBehaviour
     {
         OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
+    private void Shift_Performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnShiftAction?.Invoke(this, EventArgs.Empty);
+    }
 
     public Vector3 GetMovementDirectionNormalized()
     {
         Vector2 inputVector2 = gameControl.Player.Move.ReadValue<Vector2>();
-        
+
         Vector3 direction = new Vector3(inputVector2.x, 0, inputVector2.y);
 
         direction = direction.normalized;// 1,0,1   0.7,0,0.7
