@@ -12,6 +12,8 @@ public class Player : KitchenObjectHolder
     [SerializeField] private LayerMask counterLayerMask;
     [SerializeField] private List<GameObject> players = new List<GameObject>();
     private int currentIndex = 0;
+    [SerializeField] private GameObject particleEffectPrefab; // 新增，用于存放粒子特效预制体
+    private GameObject particleEffectInstance; // 新增，用于存放实例化后的粒子特效对象
 
     private bool isWalking = false;
     private BaseCounter selectedCounter;
@@ -26,6 +28,14 @@ public class Player : KitchenObjectHolder
         gameInput.OnOperateAction += GameInput_OnOperateAction;
         GameInput.Instance.OnShiftAction += OnShiftPerformed;
         UpdatePlayerControl();
+
+        // 实例化粒子特效并设置跟随目标
+        particleEffectInstance = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+        FollowTarget followScript = particleEffectInstance.GetComponent<FollowTarget>();
+        if (followScript != null)
+        {
+            followScript.target = transform;
+        }
     }
 
 

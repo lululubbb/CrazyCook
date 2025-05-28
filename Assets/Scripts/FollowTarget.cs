@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
+    [SerializeField] public Transform target; 
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        transform.position = Player.Instance.transform.position;
+        if (target != null)
+        {
+            transform.position = target.position;
+        }
     }
 }
