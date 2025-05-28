@@ -10,6 +10,10 @@ public class Player : KitchenObjectHolder
     [SerializeField] private float rotateSpeed = 10;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask counterLayerMask;
+    [SerializeField] private List<GameObject> players = new List<GameObject>();
+    private int currentIndex = 0;
+    [SerializeField] private GameObject particleEffectPrefab; // 新增，用于存放粒子特效预制体
+    private GameObject particleEffectInstance; // 新增，用于存放实例化后的粒子特效对象
 
     private bool isWalking = false;
     private BaseCounter selectedCounter;
@@ -22,6 +26,16 @@ public class Player : KitchenObjectHolder
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
         gameInput.OnOperateAction += GameInput_OnOperateAction;
+        GameInput.Instance.OnShiftAction += OnShiftPerformed;
+        UpdatePlayerControl();
+
+        // 实例化粒子特效并设置跟随目标
+        particleEffectInstance = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+        FollowTarget followScript = particleEffectInstance.GetComponent<FollowTarget>();
+        if (followScript != null)
+        {
+            followScript.target = transform;
+        }
     }
 
 
@@ -44,12 +58,27 @@ public class Player : KitchenObjectHolder
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
+        if (!this.enabled) return;
         selectedCounter?.Interact(this);
     }
 
     private void GameInput_OnOperateAction(object sender, System.EventArgs e)
     {
+        if (!this.enabled) return;
         selectedCounter?.InteractOperate(this);
+    }
+    private void OnShiftPerformed(object sender, System.EventArgs e)
+    {
+        currentIndex = (currentIndex + 1) % players.Count;
+        UpdatePlayerControl();
+    }
+
+    private void UpdatePlayerControl()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].GetComponent<Player>().enabled = (i == currentIndex);
+        }
     }
 
     private void HandleMovement()

@@ -62,6 +62,15 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shift"",
+                    ""type"": ""Button"",
+                    ""id"": ""14c58a3f-80b4-4af2-90d3-48cf9e4f5d2d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -207,6 +216,17 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61d536f9-6cf0-4341-b12b-fb6bff357755"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -303,6 +323,7 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Operate = m_Player.FindAction("Operate", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Shift = m_Player.FindAction("Shift", throwIfNotFound: true);
         // Monster
         m_Monster = asset.FindActionMap("Monster", throwIfNotFound: true);
         m_Monster_Newaction = m_Monster.FindAction("New action", throwIfNotFound: true);
@@ -377,6 +398,7 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Operate;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Shift;
     public struct PlayerActions
     {
         private @GameControl m_Wrapper;
@@ -385,6 +407,7 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Operate => m_Wrapper.m_Player_Operate;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Shift => m_Wrapper.m_Player_Shift;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -406,6 +429,9 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Shift.started += instance.OnShift;
+            @Shift.performed += instance.OnShift;
+            @Shift.canceled += instance.OnShift;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -422,6 +448,9 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Shift.started -= instance.OnShift;
+            @Shift.performed -= instance.OnShift;
+            @Shift.canceled -= instance.OnShift;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -583,6 +612,7 @@ public partial class @GameControl: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnOperate(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnShift(InputAction.CallbackContext context);
     }
     public interface IMonsterActions
     {
